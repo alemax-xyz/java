@@ -7,9 +7,6 @@ RUN export DEBIAN_FRONTEND=noninteractive \
         software-properties-common \
         apt-utils
 
-RUN export DEBIAN_FRONTEND=noninteractive \
- && add-apt-repository ppa:openjdk-r/ppa
-
 RUN mkdir -p /build /rootfs
 WORKDIR /build
 RUN apt-get download \
