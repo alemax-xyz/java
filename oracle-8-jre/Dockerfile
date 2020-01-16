@@ -14,7 +14,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 RUN mkdir -p /build /rootfs/usr/lib/jvm
 WORKDIR /build
 RUN wget -O /build/java.tar.gz 'https://javadl.oracle.com/webapps/download/AutoDL?BundleId=241526_1f5b5a70bf22433b84d0e960903adac8'
-RUN tar -xvf /build/java.tar.gz -C /rootfs/usr/lib/jvm
+RUN tar -xvf /build/java.tar.gz --no-same-owner -C /rootfs/usr/lib/jvm
 
 WORKDIR /rootfs
 RUN mkdir -p usr/bin \
