@@ -14,8 +14,8 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 RUN mkdir -p /build /rootfs
 WORKDIR /build
 RUN apt-get download \
-        openjdk-13-jre \
-        openjdk-13-jre-headless
+        openjdk-15-jre \
+        openjdk-15-jre-headless
 
 RUN find *.deb | xargs -I % dpkg-deb -x % /rootfs
 
@@ -32,7 +32,7 @@ RUN mkdir -p usr/bin \
         usr/lib/jvm/*/jre/ASSEMBLY_EXCEPTION \
         usr/lib/jvm/*/jre/THIRD_PARTY_README \
         usr/share \
- && ls -1 usr/lib/jvm/java-13-openjdk-*/bin/* | xargs -I % ln -s /% usr/bin/ \
+ && ls -1 usr/lib/jvm/java-15-openjdk-*/bin/* | xargs -I % ln -s /% usr/bin/ \
  && echo "-server KNOWN\n-client IGNORE" > $(ls -1 etc/java*/jvm-*.cfg)
 
 WORKDIR /
