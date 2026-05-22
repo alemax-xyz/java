@@ -1,0 +1,12 @@
+adwaita-icon-theme
+dconf-gsettings-backend
+debconf
+hicolor-icon-theme
+init-system-helpers
+openssl
+perl
+systemd
+sysvinit-utils
+shared-mime-info
+x11-common
+xkb-data
